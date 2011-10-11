@@ -2,6 +2,7 @@ require 'rspec'
 require '../lib/question_paper'
 
 describe QuestionPaper do
+  #implicit 'subject' variable already defined
   #subject {QuestionPaper.new}
   let(:question) { mock("Question")}
 
@@ -11,7 +12,6 @@ describe QuestionPaper do
   end
 
   it "should add the question to the question paper" do
-    #question = mock("Question")
     subject.add(question)
     subject.questions.should include(question)
   end
@@ -33,7 +33,6 @@ describe QuestionPaper do
     end
 
     it "should call total_marks on the question in the paper" do
-      #question = mock("Question")
       question.stub!(:mark).and_return(10)
       subject.add(question)
 

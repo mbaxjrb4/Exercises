@@ -12,10 +12,6 @@ class QuestionPaper
   end
 
   def total_marks
-    sum = 0
-    @question.each do |q|
-      sum += q.mark
-    end
-    sum
+    @question.inject(0) { |sum, q| sum+=q.mark }
   end
 end
