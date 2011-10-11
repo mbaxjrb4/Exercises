@@ -1,0 +1,11 @@
+bertuzzr-spec-) ../vendor/bundle/ruby/1.8/bin/rspec question_paper_spec.rb --format documentation
+
+QuestionPaper
+  should have an empty array of questions when QuestionPaper is created
+  should add the question to the question paper
+  when computing total available marks
+    should compute the total available marks
+    should call total_marks on the question in the paper
+
+Finished in 0.24061 seconds
+4 examples, 0 failures
