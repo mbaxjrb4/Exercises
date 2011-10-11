@@ -10,4 +10,11 @@ class QuestionPaper
   def add(question)
     @question << question
   end
+
+  def total_marks
+    sum = 0
+    @question.each do |q|
+      sum += q.mark
+    end
+  end
 end

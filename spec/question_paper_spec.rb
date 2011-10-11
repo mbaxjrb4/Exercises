@@ -14,4 +14,25 @@ describe QuestionPaper do
     subject.add(question)
     subject.questions.should include(question)
   end
+
+  it "should compute the total available marks" do
+    first_question = mock("Question")
+    first_question.stub!(:mark).and_return(10)
+    subject.add(first_question)
+
+    second_question = mock("Question")
+    second_question.stub!(:mark).and_return(20)
+    subject.add(second_question)
+
+    subject.total_marks.should == 30
+  end
+
+  it "should call total_marks on the question in the paper" do
+    question = mock("Question")
+    question.stub!(:mark).and_return(10)
+    subject.add(question)
+
+    question.should_receive(:mark)
+    subject.total_marks
+  end
 end
