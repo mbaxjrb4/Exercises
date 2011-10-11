@@ -16,5 +16,6 @@ class QuestionPaper
     @question.each do |q|
       sum += q.mark
     end
+    sum
   end
 end
